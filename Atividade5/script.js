@@ -43,6 +43,10 @@ function criateTagli(task){
   checkbox.addEventListener('click', (checkboxEvent) => {
     selectCheckbox(task.id);
   })
+  // checkbox.addEventListener('keypress', (checkboxEvent) => {
+  //   if(checkboxEvent.key == "Enter")
+  //     selectCheckbox(task.id);
+  // })
 
   let span = document.createElement('span');
   span.classList.add('newTask');
@@ -74,7 +78,7 @@ function selectCheckbox(taskID) {
   let currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('taskCheckbox');
   
   if(currentCheckbox.item(0).checked) {
-    currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('newTask').item(0).style.textDecoration = "line-through";
+    currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('newTask').item(0).style.textDecoration = "line-through rgba(0, 0, 0, 0.475)";
     currentCheckbox = document.getElementById(''+taskID+'').style.backgroundColor = "rgb(103, 205, 80)";
   } else {
     currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('newTask').item(0).style.textDecoration = "none";
