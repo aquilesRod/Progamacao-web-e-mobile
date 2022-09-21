@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: black;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+.content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(255, 238, 82);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.top {
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+#appTitle {
+    font-size: 1.5rem;
+}
+
+.top #toDoList {
+    width: 350px;
+    padding: 15px;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1.2rem;
+    color: black;
+}
+
+button {
+    width: 45px;
+    height: 26px;
+    border-radius: 12px;
+    border: 1px solid black;
+    outline: none;
+}
+
+button:hover{
+    background-color: rgb(145, 145, 145);
+    cursor: pointer;
+}
+
+#toDoList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toDoList li {
+    padding: 20px;
+    background-color: rgb(152, 152, 152);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.removeTaskButton {
+    width: 70px;
+}
+
+.taskCheckbox {
+    width: 20px;
+    height: 20px;
+}
