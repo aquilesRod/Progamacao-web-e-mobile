@@ -11,7 +11,8 @@ let answer;
 do{
   answer = String(Math.floor(Math.random() * 9999));
 } while(answer.length != 4 || !(digitsAreDifferents(answer)))
-console.log(answer);
+//Show answer on console:
+// console.log(answer);
 
 newAttempt.addEventListener('keypress', (event) => {
 
