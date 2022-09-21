@@ -2,17 +2,17 @@ let toDoList = document.getElementById("toDoList");
 let newTask = document.getElementById("newTask");
 let addButton = document.getElementById("addButton");
 
-// taskText.addEventListener('keypress', (event) => {
+newTask.addEventListener('keypress', (event) => {
+  console.log(event.code)
+  if (event.code == "Enter"){
+    var task = {
+      name: newTask.value,
+      id: generateID(),
+    }
+  }
+  addTaskToList(task);
 
-//   if (event.code == "13"){
-//     let task = {
-//       name: newTask.value,
-//       id: generateID(),
-//     }
-//   }p
-//   addTaskToList(task);
-
-// })
+})
 
 addButton.addEventListener('click', (event) => {
   let task = {
@@ -35,10 +35,14 @@ function addTaskToList(task){
 
 function criateTagli(task){
   let li = document.createElement('li');
+  li.id = task.id;
 
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.classList.add('taskCheckbox')
+  checkbox.classList.add('taskCheckbox');
+  checkbox.addEventListener('click', (checkboxEvent) => {
+    selectCheckbox(task.id);
+  })
 
   let span = document.createElement('span');
   span.classList.add('newTask');
@@ -46,6 +50,7 @@ function criateTagli(task){
 
   let removeButton = document.createElement('button');
   removeButton.classList.add('removeTaskButton');
+  removeButton.innerHTML = "remove";
   removeButton.setAttribute('onclick', 'removeTask('+task.id+')');
 
   li.appendChild(checkbox);
@@ -56,5 +61,23 @@ function criateTagli(task){
 }
 
 function removeTask(taskID) {
-  alert(taskID)
+  let confirmation = window.confirm('You really want remove this task?');
+  if(confirmation){
+    let li = document.getElementById(''+taskID+'');
+    if(li) {
+      toDoList.removeChild(li);
+    }
+  }
+}
+
+function selectCheckbox(taskID) {
+  let currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('taskCheckbox');
+  
+  if(currentCheckbox.item(0).checked) {
+    currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('newTask').item(0).style.textDecoration = "line-through";
+    currentCheckbox = document.getElementById(''+taskID+'').style.backgroundColor = "rgb(103, 205, 80)";
+  } else {
+    currentCheckbox = document.getElementById(''+taskID+'').getElementsByClassName('newTask').item(0).style.textDecoration = "none";
+    currentCheckbox = document.getElementById(''+taskID+'').style.backgroundColor = "rgb(152, 152, 152)";
+  }
 }

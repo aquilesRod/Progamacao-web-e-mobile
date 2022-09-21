@@ -13,24 +13,24 @@ do{
 } while(answer.length != 4 || !(digitsAreDifferents(answer)))
 console.log(answer);
 
-// newAttempt.addEventListener('keypress', (event) => {
+newAttempt.addEventListener('keypress', (event) => {
 
-//   if (event.key == 'Enter'){
-//     let attempt = {
-//       name: newAttempt.nodeValue,
-//       id: generateID(),
-//     }
-//   }
+  if (event.key == "Enter"){
+    var attempt = {
+      number: newAttempt.value,
+      id: generateID(),
+    }
+  }
 
-//   if(attempt.number.length != 4){
-//     alert('Please, input numbers with length 4')
-//   } else if (!digitsAreDifferents(attempt.number)) {
-//     alert('Insert diferent numbers!')
-//   } else {
-//     addAttemptToTable(attempt);
-//   }
+  if(attempt.number.length != 4){
+    alert('Please, input numbers with length 4')
+  } else if (!digitsAreDifferents(attempt.number)) {
+    alert('Insert diferent numbers!')
+  } else {
+    addAttemptToTable(attempt);
+  }
 
-// })
+})
 
 tryButton.addEventListener('click', (event) => {
   let attempt = {
@@ -73,6 +73,9 @@ function addAttemptToTable(attempt){
 
   if(bullsQuantity(attempt.number) == 4){
     alert('You WIIIIIN!');
+    let confirmation = window.confirm('Do you want play again?');
+    if(confirmation)
+      location.reload();
   }
 }
 
