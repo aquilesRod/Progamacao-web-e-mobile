@@ -1,0 +1,66 @@
+#Main {
+    background-image: url("Assets/wallpaper.jpg");
+    background-size: cover;
+    color: black;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 17px;
+}
+
+.content {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#profilePhoto{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 180px;
+    height: 210px;
+    border-radius: 15%;
+}
+
+button {
+    border-radius: 10px;
+}
+
+#contactButtons {
+   justify-content: space-between;
+   display: flex;
+   height: 30px;
+}
+
+#buttonIcons {
+    height:13px;
+    width:15px;
+}
+
+button:hover {
+    background-color: rgb(177, 177, 177);
+    cursor: pointer;
+}
+
+#aboutRadioButtons {
+    display: flexbox;
+    margin-top: 30px;
+    height: 30px;
+}
+
+hr {
+    background-color: black;
+}
+
+iframe {
+    background-color: rgb(194, 204, 244);
+    margin-top: 12px;
+    border-radius: 12px;
+    width: 500;
+    height: 150;
+}
